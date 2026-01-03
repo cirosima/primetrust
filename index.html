@@ -74,7 +74,7 @@
     <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
         <div class="text-center">
             <div class="w-12 h-12 border-3 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-            <p class="mt-3 text-gray-700 font-medium text-sm">Loading PrimeTrust Business Banking</p>
+            <p class="mt-3 text-gray-700 font-medium text-sm">Loading PrameTrust Business Banking</p>
         </div>
     </div>
 
@@ -384,8 +384,8 @@
                                     <i class="fas fa-arrow-down text-green-600 text-sm"></i>
                                 </div>
                                 <div class="flex-1">
-                                    <p class="text-sm font-medium text-gray-700">Client Payment Received</p>
-                                    <p class="text-xs text-gray-500">2 hours ago • $25,250.00</p>
+                                    <p class="text-sm font-medium text-gray-700">Wire Transfer to External Account</p>
+                                    <p class="text-xs text-gray-500">Today • $80,000.00</p>
                                 </div>
                             </div>
                             <div class="flex items-center">
@@ -393,8 +393,8 @@
                                     <i class="fas fa-exchange-alt text-blue-600 text-sm"></i>
                                 </div>
                                 <div class="flex-1">
-                                    <p class="text-sm font-medium text-gray-700">Vendor Payment Sent</p>
-                                    <p class="text-xs text-gray-500">Yesterday • $8,850.00</p>
+                                    <p class="text-sm font-medium text-gray-700">Major Client Settlement - Johnson Corp</p>
+                                    <p class="text-xs text-gray-500">12/30/2025 • $950,000.00</p>
                                 </div>
                             </div>
                         </div>
@@ -925,7 +925,21 @@
 
     <script>
         // Business Transactions Data - Updated to match account balances
-        const businessTransactions = [
+        const businessTransactions = [// ⬇⬇⬇ ADD THIS NEW TRANSACTION HERE ⬇⬇⬇
+    { 
+        id: 0, 
+        type: 'transfer', 
+        description: 'Wire Transfer to External Account', 
+        amount: -80000.00, 
+        date: new Date().toLocaleDateString('en-US'),
+        status: 'completed', 
+        account: 'Checking', 
+        category: 'External transfer', 
+        icon: 'exchange-alt', 
+        iconColor: 'purple' 
+    },
+    
+    
             { id: 1, type: 'deposit', description: 'Major Client Settlement - Johnson Corp', amount: 950000.00, date: '12/30/2025', status: 'completed', account: 'Checking', category: 'Legal Services', icon: 'arrow-down', iconColor: 'green' },
             { id: 2, type: 'payment', description: 'Office Rent - Downtown Tower', amount: -42500.00, date: '12/15/2025', status: 'completed', account: 'Checking', category: 'Rent', icon: 'building', iconColor: 'blue' },
             { id: 3, type: 'transfer', description: 'Transfer to Savings Account', amount: -100000.00, date: '12/06/2025', status: 'completed', account: 'Checking', category: 'Savings', icon: 'exchange-alt', iconColor: 'purple' },
@@ -988,12 +1002,13 @@
             { id: 60, type: 'deposit', description: 'Bank Interest - Checking', amount: 428.85, date: '10/01/2025', status: 'completed', account: 'Checking', category: 'Interest', icon: 'percent', iconColor: 'green' }
         ];
 
+       
         // Account balances that match the transactions
-        let accountBalances = {
-            checking: 1187420.85,
-            savings: 1245300.00,
-            total: 2432720.85
-        };
+let accountBalances = {
+    checking: 1107420.85,  // Changed from 1,187,420.85 to 1,107,420.85
+    savings: 1245300.00,
+    total: 2352720.85      // Changed from 2,432,720.85 to 2,352,720.85
+};
 
         // Enhanced Notifications Data - now based on recent transactions
         let notifications = [];
